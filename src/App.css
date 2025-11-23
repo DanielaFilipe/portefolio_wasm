@@ -1,0 +1,165 @@
+/* ---- Fonte e variáveis ---- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+    --bg: #fff7fb;
+    --bg-accent: #fbeef5;
+    --card: #ffffff;
+    --text: #2b2b2b;
+    --muted: #6b6b6b;
+    --primary: #cc5aa6;   /* rosa framboesa suave */
+    --primary-700:#b24892;
+    --accent: #7b6cff;    /* lavanda */
+    --ring: #ffd6e7;      /* rosa claro */
+    --shadow: 0 10px 25px rgba(204, 90, 166, 0.15);
+}
+
+/* ---- Base ---- */
+*{ box-sizing: border-box; }
+html, body, #root{ height: 100%; }
+body{
+    margin:0;
+    background:
+            radial-gradient(1200px 800px at -10% -10%, #ffeaf3, transparent 55%),
+            radial-gradient(900px 600px at 110% 0%, #efeaff, transparent 50%),
+            var(--bg);
+    color: var(--text);
+    font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* ---- App wrapper ---- */
+.App{
+    max-width: 980px;
+    margin: 48px auto;
+    padding: 28px;
+}
+
+/* ---- Card geral para secções ---- */
+.card{
+    background: var(--card);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    padding: 28px;
+    border: 1px solid #f6e3ef;
+}
+
+/* ---- Header / topo ---- */
+.header{
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 20px;
+    align-items: center;
+    margin-bottom: 28px;
+}
+
+.profile-image{
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    object-fit: cover;
+    box-shadow: 0 8px 20px rgba(123,108,255,.2);
+    border: 3px solid var(--ring);
+    background: #fff;
+}
+
+h1{
+    margin: 0;
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: .3px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle{
+    color: var(--muted);
+    margin-top: 4px;
+    font-weight: 400;
+}
+
+/* ---- Títulos de secção ---- */
+h2, h3{
+    color: var(--primary-700);
+    margin: 0 0 14px 0;
+    letter-spacing:.2px;
+}
+
+/* ---- Listas & parágrafos ---- */
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+li{
+    margin: 8px 0;
+    color: var(--text);
+}
+p{ color: var(--text); line-height: 1.6; }
+
+/* ---- Chips (skills / hobbies) ---- */
+.chips{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.chip{
+    padding: 8px 12px;
+    border-radius: 999px;
+    background: linear-gradient(180deg, #fff, var(--bg-accent));
+    border: 1px solid #f3d9e7;
+    font-size: .92rem;
+    box-shadow: 0 4px 12px rgba(204,90,166,.08);
+}
+
+/* ---- Links & botões ---- */
+a{
+    color: var(--accent);
+    text-decoration: none;
+    transition: 200ms ease;
+}
+a:hover{
+    color: var(--primary);
+    text-decoration: underline;
+}
+.btn{
+    display:inline-block;
+    padding: 10px 16px;
+    border-radius: 12px;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    box-shadow: var(--shadow);
+    border: none;
+    cursor: pointer;
+    transition: transform .15s ease, box-shadow .15s ease;
+}
+.btn:hover{ transform: translateY(-1px); box-shadow: 0 12px 28px rgba(123,108,255,.25); }
+
+/* ---- Layout das secções ---- */
+.sections{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+.section{}
+
+/* ---- Footer ---- */
+.footer{
+    margin-top: 28px;
+    text-align: center;
+    color: var(--muted);
+}
+
+/* ---- Responsivo ---- */
+@media (max-width: 820px){
+    .App{ padding: 18px; margin: 28px auto; }
+    .header{ grid-template-columns: 96px 1fr; gap: 16px; }
+    .profile-image{ width:96px; height:96px; border-radius:16px; }
+    .sections{ grid-template-columns: 1fr; }
+    h1{ font-size: 1.8rem; }
+}
